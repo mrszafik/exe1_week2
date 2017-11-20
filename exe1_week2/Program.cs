@@ -6,14 +6,26 @@ namespace exe1_week2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Employee employee1 = new Employee();
+            Employee employee2 = new Employee();
+
+            employee1.setFirstName("Rafał");
+            employee1.LastName = "Mrozowski";
+            employee1.setSalary(2500.5);
+            Console.WriteLine("Employee 1: " + employee1.getFirstName() + " " + employee1.LastName + employee1.getSalaryPerYear());
+
+            employee2.setFirstName("Marek");
+            employee2.LastName = "Takijakis";
+            employee2.setSalary(3299);
+            Console.WriteLine("Employee 1: " + employee2.getFirstName() + " " + employee2.LastName + employee2.getSalaryPerYear());
         }
     }
 
     class Person
     {
         private string _firstName;
-        private string _lastName
+        private string _lastName;
+        public string LastName
         {
             get
             {
