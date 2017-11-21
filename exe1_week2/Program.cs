@@ -9,15 +9,15 @@ namespace exe1_week2
             Employee employee1 = new Employee();
             Employee employee2 = new Employee();
 
-            employee1.setFirstName("Rafał");
+            employee1.SetFirstName("Rafał");
             employee1.LastName = "Mrozowski";
-            employee1.setSalary(2500.5);
-            Console.WriteLine("Employee 1: " + employee1.getFirstName() + " " + employee1.LastName + employee1.getSalaryPerYear());
+            employee1.SetSalary(2500.5);
+            employee1.Describe();
 
-            employee2.setFirstName("Marek");
+            employee2.SetFirstName("Marek");
             employee2.LastName = "Takijakis";
-            employee2.setSalary(3299);
-            Console.WriteLine("Employee 1: " + employee2.getFirstName() + " " + employee2.LastName + employee2.getSalaryPerYear());
+            employee2.SetSalary(3299);
+            employee2.Describe();
         }
     }
 
@@ -38,12 +38,12 @@ namespace exe1_week2
         }
         public Person(){ }
 
-        public void setFirstName(string firstName)
+        public void SetFirstName(string firstName)
         {
             _firstName = firstName;
         }
 
-        public string getFirstName()
+        public string GetFirstName()
         {
             return _firstName;
         }
@@ -65,18 +65,23 @@ namespace exe1_week2
         private double _salary;
         public Employee() { }
 
-        public void setSalary(double salary)
+        public void SetSalary(double salary)
         {
             _salary = salary;
         }
-        public double getSalary()
+        public double GetSalary()
         {
             return _salary;
         }
 
-        public double getSalaryPerYear()
+        public double GetSalaryPerYear()
         {
             return 12 * _salary;
+        }
+
+        public void Describe()
+        {
+            Console.WriteLine(this.GetFirstName() + " " + this.LastName + " " + this.GetSalary() + " " + this.GetSalaryPerYear());
         }
     }
 }
